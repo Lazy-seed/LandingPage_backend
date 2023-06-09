@@ -41,8 +41,8 @@ export const newUser = async (req, res) => {
             from: 'VidyalankarClasses',
             to: 'aryankadu77@gmail.com',
             subject: `GATE asprient has applied  ${data.name}`,
-            text: ` name : ${data.Fname + ' ' + data.Lname}  \n  contact : ${data.contact} \n  email:${data.email}  `,
-            html: ` <h3>name : ${data.Fname + ' ' + data.Lname}  \n  contact : ${data.contact} \n  email:${data.email} \n  </h3>`
+            text: ` name : ${data.first_name + ' ' + data.last_name}  \n  contact : ${data.contact} \n  email:${data.email}  `,
+            html: ` <h3>name : ${data.first_name + ' ' + data.last_name}  \n  contact : ${data.contact} \n  email:${data.email} \n  </h3>`
         };
 
         const mailis = await transporter.sendMail(mailOptions);

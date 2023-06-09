@@ -34,14 +34,15 @@ export const newUser = async (req, res) => {
             from: 'VidyalankarClasses',
             to: data.email,
             subject: 'Your GATE application ',
-            text: `You have been successfuly submitted application. We will call you back ASAP!!!! `,
+            text: `You have successfully submitted GATE application. We will call you back ASAP!!!! `,
         };
         // admin
         const mailOptions2 = {
             from: 'VidyalankarClasses',
             to: 'aryankadu77@gmail.com',
-            subject: 'GATE asprient has applied',
-            text: ` name : ${data.Fname + ' ' + data.Lname}  \n  contact : ${data.contact} \n  email:${data.email} `,
+            subject: `GATE asprient has applied  ${data.name}`,
+            text: ` name : ${data.Fname + ' ' + data.Lname}  \n  contact : ${data.contact} \n  email:${data.email}  `,
+            html: ` <h3>name : ${data.Fname + ' ' + data.Lname}  \n  contact : ${data.contact} \n  email:${data.email} \n  </h3>`
         };
 
         const mailis = await transporter.sendMail(mailOptions);
@@ -81,7 +82,8 @@ export const sndOTP = async (req, res) => {
         from: 'VidyalankarClasses',
         to: data.email,
         subject: 'email verififcation ',
-        text: `your OTP for username is ${data.Gen_OTP}`,
+        text: `your OTP for GATE application  is ${data.Gen_OTP}`,
+        html:`<div ><h3>Your OTP for GATE application  is</h3> <h1 style="color:green;">${data.Gen_OTP}</h1></div>`
     };
 
     const mailis = await transporter.sendMail(mailOptions);

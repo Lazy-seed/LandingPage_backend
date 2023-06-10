@@ -34,7 +34,7 @@ export const newUser = async (req, res) => {
             from: 'VidyalankarClasses',
             to: data.email,
             subject: 'Your GATE application ',
-            text: `You have successfully submitted GATE application. We will call you back ASAP!!!! `,
+            text: "You have successfully submitted GATE application. We will call you back ASAP!!!! ",
         };
         // admin
         const mailOptions2 = {
